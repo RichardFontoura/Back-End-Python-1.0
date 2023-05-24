@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Teste-login</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Bem-vindo, {{ username }}!</h2>
+        <nav class="navigation">
+            <a href="{{ url_for('views.home') }}">Inicio</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+            <button class="btnLogin-popup" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</button>
+            <form id="logout-form" action="{{ url_for('auth.logout') }}" method="POST" style="display: none;"></form>
+        </nav>
+    </header>
+    
+</body>
+</html>
